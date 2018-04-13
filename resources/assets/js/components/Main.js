@@ -10,38 +10,75 @@ export default class Main extends Component {
         super(props);
         this.state = {
             randomQuote: "Placement quote here",
-            pictures: ["https://images.unsplash.com/photo-1506621595993-13649da1c1a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ec151e51dbfaa78d5ede0139864eefe9&auto=format&fit=crop&w=1955&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1508709145194-8fec9fa2102b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f0651db87a489e855e6d70a687b77722&auto=format&fit=crop&w=1963&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            "https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3694576331e527eb0933b269a6fc40fb&auto=format&fit=crop&w=945&q=80",
-            ]
+            pictures: [
+        {
+            src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+            thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+            thumbnailWidth: 700,
+            thumbnailHeight: 504,
+            caption: "After Rain (Jeshu John - designerspics.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 183,
+            caption: "37H (gratispgraphy.com)"
+        },
+        {
+            src: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg",
+            thumbnail: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_n.jpg",
+            thumbnailWidth: 271,
+            thumbnailHeight: 320,
+            caption: "Orange Macro (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
+            thumbnail: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "201H (gratisography.com)"
+        },
+        {
+            src: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
+            thumbnail: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Flower Interior Macro (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_b.jpg",
+            thumbnail: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Man on BMX (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_b.jpg",
+            thumbnail: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_n.jpg",
+            thumbnailWidth: 320,
+            thumbnailHeight: 213,
+            caption: "Ropeman - Thailand (Tom Eversley - isorepublic.com)"
+        },
+        {
+            src: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_b.jpg",
+            thumbnail: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_n.jpg",
+            thumbnailWidth: 257,
+            thumbnailHeight: 320,
+            caption: "A photo by 贝莉儿 NG. (unsplash.com)"
+        }
+    ]
         };
     }
 
     render() {
         return (
-            <div className="container">
+            <div className = "container">
                 <Title quote = {this.state.randomQuote} pictures = {this.state.pictures}/>
-                <hr />
+                <hr className ="✁"/>
                 <MenuBar />
-
+                <hr />
+                <GalleryList pictures = {this.state.pictures}/>
             </div>
         );
     }

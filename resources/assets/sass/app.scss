@@ -13,6 +13,31 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body,html {
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+//for the horizontal style
+hr.✁ {
+    border-style: dashed;
+    border-width: 3px 0 0;
+    height: 2px;
+    margin-top: 20px;
+    width: 90%;
+}
+hr.✁:before {
+    content: "\2701"; /* snip */
+    display: block;
+    font-size: 150%;
+    left: 50%;
+    margin: -23px 0 0 -8px;
+    padding: 0 8px;
+    position: absolute;
+    text-align: center;
+ }
 
 //mainbuttons
 .button {
@@ -29,3 +54,12 @@
 		}
 	}
 }
+
+//main id tag
+#main {
+	width:100%;
+	height:100%;
+	overflow-x:auto;
+	padding-top:3%;
+}
+

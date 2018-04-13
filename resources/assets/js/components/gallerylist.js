@@ -1,16 +1,15 @@
 import React from 'react';
-import GalleryItem from './GalleryItem'
+import GalleryItem from './GalleryItem';
+import Gallery from 'react-grid-gallery';
 
 function GalleryList(props){
 	//pics return an array of arrays link
-	const pics = props.pictures.map((picture) => {
-		return <GalleryItem pic = {picture}/>
-	});
+	// const pics = props.pictures.map((picture) => {
+	// 	return <div className ="col-md-4"> <GalleryItem pic = {picture}/> </div>
+	// });
 
 	return (
-		<div class = "row">
-			{pics}
-		</div>
+		<Gallery images = {props.pictures}/>
 	);
 }
 
