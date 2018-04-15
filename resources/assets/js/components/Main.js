@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Title from './title';
 import MenuBar from './menubar';
-import GalleryList from './gallerylist';
 import axios from 'axios';
 
 export default class Main extends Component {
@@ -74,11 +73,9 @@ export default class Main extends Component {
     render() {
         return (
             <div className = "container">
-                <Title quote = {this.state.randomQuote} pictures = {this.state.pictures}/>
+                <Title className = "title" quote = {this.state.randomQuote} pictures = {this.state.pictures}/>
                 <hr className ="✁"/>
-                <MenuBar />
-                <hr />
-                <GalleryList pictures = {this.state.pictures}/>
+                <MenuBar images = {this.state.pictures}/>
             </div>
         );
     }

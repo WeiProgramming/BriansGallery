@@ -10428,15 +10428,16 @@ hr.✁:before {
   border: none;
   background: none;
   outline: none;
-  width: 30%;
+  padding: 0 10%;
   font-size: 18px;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .button button:hover {
-  -webkit-box-shadow: 0 8px 6px -6px #8888;
-          box-shadow: 0 8px 6px -6px #8888;
+  -webkit-box-shadow: 0 8px 6px -6px #A2D9F2;
+          box-shadow: 0 8px 6px -6px #A2D9F2;
+  color: #A2D9F2;
 }
 
 #main {
@@ -10444,5 +10445,18 @@ hr.✁:before {
   height: 100%;
   overflow-x: auto;
   padding-top: 3%;
+  background-image: url("https://fm100.com/wp-content/uploads/2015/09/light-pink-background-1346x921.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+.title h1 {
+  font-weight: bold;
+  text-shadow: 1px 1px 8px blue;
+}
+
+.contact h1 {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 

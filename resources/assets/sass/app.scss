@@ -18,6 +18,7 @@ body,html {
 	height:100%;
 	margin:0;
 	padding:0;
+
 }
 
 //for the horizontal style
@@ -45,12 +46,14 @@ hr.✁:before {
 		border: none;
 		background: none;
 		outline:none;
-		width:30%;
+		padding: 0 10%;
 		font-size: 18px;
+
 		transition: all .2s;
 
 		&:hover {
-			box-shadow: 0 8px 6px -6px #8888;
+			box-shadow: 0 8px 6px -6px #A2D9F2;
+			color:#A2D9F2;
 		}
 	}
 }
@@ -61,5 +64,23 @@ hr.✁:before {
 	height:100%;
 	overflow-x:auto;
 	padding-top:3%;
+	background-image: url("https://fm100.com/wp-content/uploads/2015/09/light-pink-background-1346x921.gif");
+	background-size:cover;
+	background-position:center;
+}
+
+//title jsx tag
+.title {
+	h1 {
+		font-weight:bold;
+		text-shadow: 1px 1px 8px blue;
+	}
+}
+
+//contactscreen
+.contact {
+	h1 {
+		transform:translateX(100%);
+	}
 }
 
