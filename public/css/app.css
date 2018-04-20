@@ -10503,8 +10503,8 @@ button {
 
 .screen {
   border: 20px solid transparent;
-  -o-border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
-     border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
+  -o-border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
+     border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
   background-color: #EFDBCC;
   padding: 3%;
   overflow: auto;
@@ -10519,8 +10519,8 @@ button {
   background-color: #EFDBCC;
   border: 30px solid transparent;
   padding: 3% 2% 0 2%;
-  -o-border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
-     border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
+  -o-border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
+     border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
 }
 
 .title h1 {
