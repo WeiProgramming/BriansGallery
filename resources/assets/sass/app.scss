@@ -8,6 +8,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@font-face{
+  font-family: Diamond-Dust;
+  src: url("/fonts/diamondfont.ttf");
+}
+
+@font-face {
+	font-family: Angel-Font;
+	src: url('/fonts/angelfont.ttf');
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -21,24 +31,11 @@ body,html {
 
 }
 
-//for the horizontal style
-hr.✁ {
-    border-style: dashed;
-    border-width: 3px 0 0;
-    height: 2px;
-    margin-top: 20px;
-    width: 90%;
+//real button
+button {
+	font-family: Angel-Font;
+	font-weight:bold;
 }
-hr.✁:before {
-    content: "\2701"; /* snip */
-    display: block;
-    font-size: 150%;
-    left: 50%;
-    margin: -23px 0 0 -8px;
-    padding: 0 8px;
-    position: absolute;
-    text-align: center;
- }
 
 //mainbuttons
 .button {
@@ -52,8 +49,8 @@ hr.✁:before {
 		transition: all .2s;
 
 		&:hover {
-			box-shadow: 0 8px 6px -6px #A2D9F2;
-			color:#A2D9F2;
+			box-shadow: 0 8px 6px -6px #2b733b;
+			color:#2b733b;
 		}
 	}
 }
@@ -63,24 +60,82 @@ hr.✁:before {
 	width:100%;
 	height:100%;
 	overflow-x:auto;
-	padding-top:3%;
-	background-image: url("https://fm100.com/wp-content/uploads/2015/09/light-pink-background-1346x921.gif");
+	padding: 0 15% 0 15%;
+	background-image:url('https://c.pxhere.com/photos/3e/87/pink_romantic_background-810385.jpg!d');
 	background-size:cover;
-	background-position:center;
+	background-repeat:no-repeat;
+}
+
+//animation to slide the screen
+.slide {
+	animation: slide .7s ease-in forwards;
+}
+
+@keyframes slide {
+	from { 
+		transform:translateX(100%);
+		opacity:.4;
+	}
+	to {
+		transform:translateX(0);
+		opacity:1;
+	}
+}
+
+//animate the quotes
+.fade {
+	animation: fade .8s ease-in-out forwards;
+}
+@keyframes fade {
+	from{opacity: .1;}
+	to{opacity:1;}
+}
+
+//handle the screen background
+.screen {
+	border: 20px solid transparent;
+	border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
+
+	h1 {
+		font-family: Angel-Font;
+		margin-bottom:3%;
+	}
+
+	background-color:#EFDBCC;
+	padding: 3%;
+	overflow:auto;
+}
+
+//holds the title and menubar 
+.heading {
+	background-color: #EFDBCC;
+	border: 30px solid transparent;
+	padding:3% 2% 0 2%;
+	border-image: url(http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png) 80 round;
 }
 
 //title jsx tag
 .title {
 	h1 {
+		color:white;
+		font-family:Angel-Font;
 		font-weight:bold;
-		text-shadow: 1px 1px 8px blue;
+		font-size:5em;
+		opacity:.8;
+		text-shadow: 2px 4px 8px #2b733b;
+	}
+
+	h4 {
+		font-family:Diamond-Dust;
+		font-weight:bold;
+	}
+
+	p {
+		height:50px;
 	}
 }
 
-//contactscreen
-.contact {
-	h1 {
-		transform:translateX(100%);
-	}
+//padding for the entire screen
+.padding {
+	margin-top:1%;
 }
-

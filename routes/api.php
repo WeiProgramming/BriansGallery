@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//get all the images
+Route::get('/category','ImagesController@index');
+
+//get the selected images
+Route::get('/category/{categoryname}', 'ImagesController@getImages');
