@@ -10438,7 +10438,7 @@ button {
   height: 100%;
   overflow-x: auto;
   padding: 0 15% 0 15%;
-  background-image: url("https://c.pxhere.com/photos/3e/87/pink_romantic_background-810385.jpg!d");
+  background-image: url("/images/site_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -10503,8 +10503,8 @@ button {
 
 .screen {
   border: 20px solid transparent;
-  -o-border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
-     border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
+  -o-border-image: url("/images/border_image.png") 80 round;
+     border-image: url("/images/border_image.png") 80 round;
   background-color: #EFDBCC;
   padding: 3%;
   overflow: auto;
@@ -10519,8 +10519,8 @@ button {
   background-color: #EFDBCC;
   border: 30px solid transparent;
   padding: 3% 2% 0 2%;
-  -o-border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
-     border-image: url("http://i1217.photobucket.com/albums/dd391/thefriarmichael/Borders/OnevA1_zps8105d851.png") 80 round;
+  -o-border-image: url("/images/border_image.png") 80 round;
+     border-image: url("/images/border_image.png") 80 round;
 }
 
 .title h1 {
@@ -10542,7 +10542,7 @@ button {
 }
 
 .padding {
-  margin-top: 1%;
+  margin: 1% 0;
 }
 
 /* Flaired edges, by Tomas Theunissen */
