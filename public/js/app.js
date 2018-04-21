@@ -54829,7 +54829,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var imageAPI = "https://briangallerysite.herokuapp.com/api/category";
+var imageAPI = "http://localhost:8000/api/category";
 
 var Main = function (_Component) {
     _inherits(Main, _Component);
