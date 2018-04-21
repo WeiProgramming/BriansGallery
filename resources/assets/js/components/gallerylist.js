@@ -33,6 +33,7 @@ export default class GalleryList extends Component {
 			return (
 				<div className ="screen slide">
 					<h1>Gallery</h1>
+					<hr className="style-seven"/>
 					<Gallery images = {this.props.images}/>
 				</div>
 			)

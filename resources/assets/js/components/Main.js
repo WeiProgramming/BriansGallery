@@ -19,10 +19,6 @@ export default class Main extends Component {
 
     componentDidMount(){
         axios.get(imageAPI).then((response)=>{
-            response.data.forEach((picture)=> {
-                picture.thumbnailWidth = this.setMinMax();
-                picture.thumbnailHeight = this.setMinMax();
-            });
             this.setState({pictures:response.data})
         });
     }

@@ -49,8 +49,8 @@ button {
 		transition: all .2s;
 
 		&:hover {
-			box-shadow: 0 8px 6px -6px #2b733b;
-			color:#2b733b;
+			box-shadow: 0 8px 6px -6px #0a8eff;
+			color:#0a8eff;
 		}
 	}
 }
@@ -122,7 +122,7 @@ button {
 		font-weight:bold;
 		font-size:5em;
 		opacity:.8;
-		text-shadow: 2px 4px 8px #2b733b;
+		text-shadow: 2px 4px 8px #0a8eff;
 	}
 
 	h4 {
@@ -138,4 +138,25 @@ button {
 //padding for the entire screen
 .padding {
 	margin-top:1%;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }

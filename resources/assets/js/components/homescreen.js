@@ -4,6 +4,7 @@ function HomeScreen(){
 	return (
 		<div className = "screen slide">
 			<h1>Home</h1>
+			<hr className="style-seven"/>
 			<div className = "row">
 				<div className = "col-md-8">
 					<p>Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy.
@@ -51,7 +52,7 @@ Chelsea's best friend is a health centre receptionist called Gordon Mason. They 
 						className = "img-thumbnail"/>
 					</div>
 					<div> 
-						<img src ="https://images.unsplash.com/photo-1517287180955-bf43830d10be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5c8778a7c1cc79a0bbee79e7f014cf3f&auto=format&fit=crop&w=1650&q=80" 
+						<img src ="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75c105dd84f3d5ebb1d72c5ce1c1b841&auto=format&fit=crop&w=1950&q=80" 
 						className = "img-thumbnail"/>
 					</div>
 					<div> 

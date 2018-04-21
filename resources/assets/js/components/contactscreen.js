@@ -20,6 +20,7 @@ export default class ContactScreen extends Component{
 		return (
 			<div className = "screen slide">
 				<h1>Contact Me</h1>
+				<hr className="style-seven"/>
 				<div className ="row">
 
 				<div className = "col-md-4 text-center" style = {{"overflow":"auto"}}>
