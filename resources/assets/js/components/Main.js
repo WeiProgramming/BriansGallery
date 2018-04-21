@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MenuBar from './menubar';
 import axios from 'axios';
 
-const imageAPI = "http://localhost:8000/api/category";
+const imageAPI = "https://briangallerysite.herokuapp.com/api/category";
 
 export default class Main extends Component {
     constructor(props){
