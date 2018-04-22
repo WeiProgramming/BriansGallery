@@ -10515,6 +10515,10 @@ button {
   margin-bottom: 3%;
 }
 
+.screen #image-container {
+  height: 750px;
+}
+
 .heading {
   background-color: #EFDBCC;
   border: 30px solid transparent;

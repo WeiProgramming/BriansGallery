@@ -55069,7 +55069,14 @@ var GalleryList = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (GalleryList.__proto__ || Object.getPrototypeOf(GalleryList)).call(this, props));
 
-		_this.state = {};
+		_this.state = {
+			images: [],
+			imagesPerPage: 12,
+			currentPage: 1,
+			numberOfPages: [],
+			selectedScreen: ""
+		};
+		_this.handleClick = _this.handleClick.bind(_this);
 		// this.images; 
 		return _this;
 	}
@@ -55077,14 +55084,53 @@ var GalleryList = function (_Component) {
 	_createClass(GalleryList, [{
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(nextProps) {
-			this.setState({ selectedScreen: nextProps.selectedScreen });
+			this.setState({ selectedScreen: nextProps.selectedScreen, images: nextProps.images });
 			// this.images = nextProps.images.map((image)=>{
 			// 	return <GalleryItem key= {image.id} pic = {image}/>;
 			// });
 		}
 	}, {
+		key: 'handleClick',
+		value: function handleClick(e) {
+			this.setState({
+				currentPage: Number(e.target.id)
+			});
+			e.preventDefault();
+		}
+	}, {
 		key: 'changeScreen',
 		value: function changeScreen(selectedscreen) {
+			var _this2 = this;
+
+			var _state = this.state,
+			    images = _state.images,
+			    currentPage = _state.currentPage,
+			    imagesPerPage = _state.imagesPerPage;
+
+			console.log(currentPage);
+
+			var indexOfLastImage = currentPage * imagesPerPage;
+			var indexOfFirstImage = indexOfLastImage - imagesPerPage;
+			var currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+			//logic for page numbers
+			var pageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// for(let i = 1; i <= Math.ceil(images.length/imagesPerPage);i++){
+			// 	return pageNumbers.push(i);
+			// };
+
+			var renderPageNumbers = pageNumbers.map(function (number) {
+				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'button',
+					{
+						className: 'btn btn-primary',
+						style: { "fontFamily": "serif" },
+						key: number,
+						id: number,
+						onClick: _this2.handleClick },
+					number
+				);
+			});
+
 			if (this.state.selectedScreen === "home") {
 				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					'div',
@@ -55102,7 +55148,16 @@ var GalleryList = function (_Component) {
 						'Gallery'
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'style-seven' }),
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_grid_gallery___default.a, { images: this.props.images })
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ id: 'image-container' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_grid_gallery___default.a, { images: currentImages })
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ id: 'page-numbers' },
+						renderPageNumbers
+					)
 				);
 			} else if (this.state.selectedScreen === "contact") {
 				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -55115,6 +55170,7 @@ var GalleryList = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'div',
 				{ className: 'padding' },
