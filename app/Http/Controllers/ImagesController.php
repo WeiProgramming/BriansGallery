@@ -8,8 +8,25 @@ use App\Category;
 
 class ImagesController extends Controller
 {
+	//show all images
 	public function index(){
 		$images = Image::all();
 		return $images;
+	}
+
+	//show specific images
+	public function getImages($id){
+		$categoryImages = Category::find($id)->image;
+		return $categoryImages;
+	}
+
+	//show upload page
+	public function showUploadPage(){
+		return view('upload-page');
+	}
+
+	//tore upload data to db
+	public function storeUpload(Request $request){
+		reditrect()->back();
 	}
 }

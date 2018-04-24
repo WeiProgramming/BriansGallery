@@ -21,4 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/category','ImagesController@index');
 
 //get the selected images
-Route::get('/category/{categoryname}', 'ImagesController@getImages');
+Route::get('/category/{id}', 'ImagesController@getImages');
+
+
+// Route::group(['middleware'=>'auth:web'],function(){
+	//show page to upload file
+	Route::get('/admin/upload',['as'=>'showuploadform', 'uses' => 'ImagesController@showUploadPage']);
+
+	//send upload data to database
+	Route::post('/admin/upload',['as'=> 'storedata', 'uses' => 'ImagesController@storeUpload']);
+
+// }) ;

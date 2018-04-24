@@ -44,10 +44,10 @@ export default class GalleryList extends Component {
 		const indexOfFirstImage = indexOfLastImage - imagesPerPage;
 		const currentImages = images.slice(indexOfFirstImage,indexOfLastImage);
 		//logic for page numbers
-		const pageNumbers = [1,2,3,4,5,6,7,8,9,10];
-		// for(let i = 1; i <= Math.ceil(images.length/imagesPerPage);i++){
-		// 	return pageNumbers.push(i);
-		// };
+		const pageNumbers = [];
+		for(let i = 1; i <= Math.ceil(images.length/imagesPerPage);i++){
+			pageNumbers.push(i);
+		};
 
 		const renderPageNumbers = pageNumbers.map((number)=>{
 			return (

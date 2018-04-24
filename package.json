@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "npm": "^5.8.0",
+        "react-addons-css-transition-group": "^15.6.2",
         "react-grid-gallery": "^0.4.8",
         "unirest": "^0.5.1"
     }
