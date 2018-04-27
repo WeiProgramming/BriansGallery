@@ -56255,7 +56255,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var imageAPI = "http://localhost:8000/api/category";
+var imageAPI = "https://brianartgallery.herokuapp.com/api/category";
 
 var Main = function (_Component) {
     _inherits(Main, _Component);
