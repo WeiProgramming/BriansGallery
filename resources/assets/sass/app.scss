@@ -101,6 +101,13 @@ button {
 		margin-bottom:3%;
 	}
 
+	.fab {
+		&:hover {
+			background-color:pink;
+		}
+
+	}
+
 	#image-container {
 		height:750px;
 	}

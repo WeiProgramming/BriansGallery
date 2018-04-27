@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/', ['as'=>'home', 'uses' => function(){
+	return view('welcome');
+}]);
+
 //get all the images
 Route::get('/category','ImagesController@index');
 

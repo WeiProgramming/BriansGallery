@@ -61830,7 +61830,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var quotes = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-	'p',
+	'h5',
 	{ className: 'fade' },
 	'"Don\'t think about making art, just get it done. Let everyone else decide if it\'s good or bad, whether they love it or hate it. While they are deciding, make even more art."" Andy Warhol'
 ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -61838,7 +61838,7 @@ var quotes = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 	{ className: 'fade' },
 	'"You can be the ripest, juiciest peach in the world, and there\'s still going to be somebody who hates peaches." Dita Von Teese'
 ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-	'h5',
+	'h4',
 	{ className: 'fade' },
 	'"I love making new food" Brian Nguyen'
 )];

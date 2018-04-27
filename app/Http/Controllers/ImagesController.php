@@ -25,8 +25,9 @@ class ImagesController extends Controller
 		return view('upload-page');
 	}
 
-	//tore upload data to db
+	//store upload data to db
 	public function storeUpload(Request $request){
-		reditrect()->back();
+		dd($request->file);
+		return redirect()->route('home');
 	}
 }

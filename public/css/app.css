@@ -10515,6 +10515,10 @@ button {
   margin-bottom: 3%;
 }
 
+.screen .fab:hover {
+  background-color: pink;
+}
+
 .screen #image-container {
   height: 750px;
 }
