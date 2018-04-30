@@ -1,4 +1,7 @@
 import React,{Component} from 'react';
+import xxios from 'axios';
+
+const questionFormURL = "http://localhost:8000/api/send";
 
 export default class ContactScreen extends Component{
 	constructor(props){
@@ -7,6 +10,7 @@ export default class ContactScreen extends Component{
 			email: "",
 			subject: "",
 			body: "",
+			conditionMessage: "",
 			transform: this.props.screenTransform
 		};
 	}
@@ -16,16 +20,32 @@ export default class ContactScreen extends Component{
 		console.log(nextProps.screenTransform + " prop receive");
 	}
 
+	handleQuestion(e){
+		axios.post(questionFormURL,{
+			email:"test@gmail.com",
+			subject:"hey there",
+			body:"money"
+		}).then((response)=> {
+			this.setState({conditionMessage:<p className ="alert alert-success">{response.data.message}</p>});
+		}).catch((error) => {
+			this.setState({conditionMessage:<p className ="alert alert-danger">{error}</p>});
+		});
+
+		e.preventDefault();
+	}
+
 	render(){
 		return (
 			<div className = "screen slide">
 				<h1>Contact Me</h1>
 				<hr className="style-seven"/>
+								{this.state.conditionMessage}
 				<div className ="row">
-
 				<div className = "col-md-4 text-center" style = {{"overflow":"auto"}}>
-					 <img className="img-responsive" style={{"height":"275px"}}
-					 src = "https://images.unsplash.com/photo-1458240598330-ccda17524e5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05e58502ded37d19bbf912722b26d21b&auto=format&fit=crop&w=934&q=80"/>
+					 <div> 
+						<img src ="images/corgs.jpg" 
+						className = "img-thumbnail"/>
+					</div>
 					 <div className = "row" style={{"marginTop":"5%"}}>
 					 	<div className = "col-md-3">
 					 		<i className="fab fa-facebook-square"></i>
@@ -43,7 +63,7 @@ export default class ContactScreen extends Component{
 				</div>
 
 				<div className ="contact text-center col-md-8">
-					<form>
+					<form >
 						<div className = "form-group">
 						<label htmlFor="email">Email: </label>
 							<input className = "form-control" type = "text" name = "email" 
@@ -64,7 +84,7 @@ export default class ContactScreen extends Component{
 							</textarea>
 						</div>
 						<div className = "form-group">
-							<input className = "btn btn-primary btn-block form-control" type="submit" value="Submit"/>
+							<input className = "btn btn-primary btn-block form-control" onClick = {(e) => {this.handleQuestion(e)}} type="submit" value="Submit"/>
 						</div>
 					</form>
 				</div>

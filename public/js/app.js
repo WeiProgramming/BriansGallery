@@ -56255,7 +56255,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var imageAPI = "https://brianartgallery.herokuapp.com/api/category";
+var imageAPI = "http://localhost:8000/api/category";
 
 var Main = function (_Component) {
     _inherits(Main, _Component);
@@ -61576,6 +61576,8 @@ module.exports = CheckButton;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61585,6 +61587,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
+
+
+var questionFormURL = "http://localhost:8000/api/send";
 
 var ContactScreen = function (_Component) {
 	_inherits(ContactScreen, _Component);
@@ -61598,114 +61603,147 @@ var ContactScreen = function (_Component) {
 			email: "",
 			subject: "",
 			body: "",
+			conditionMessage: "",
 			transform: _this.props.screenTransform
 		};
 		return _this;
 	}
 
 	_createClass(ContactScreen, [{
-		key: "componentWillReceiveProps",
+		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(nextProps) {
 			this.setState({ transform: nextProps.screenTransform });
 			console.log(nextProps.screenTransform + " prop receive");
 		}
 	}, {
-		key: "render",
-		value: function render() {
+		key: 'handleQuestion',
+		value: function handleQuestion(e) {
 			var _this2 = this;
 
+			axios.post(questionFormURL, {
+				email: "test@gmail.com",
+				subject: "hey there",
+				body: "money"
+			}).then(function (response) {
+				_this2.setState({ conditionMessage: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'p',
+						{ className: 'alert alert-success' },
+						response.data.message
+					) });
+			}).catch(function (error) {
+				_this2.setState({ conditionMessage: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'p',
+						{ className: 'alert alert-danger' },
+						error
+					) });
+			});
+
+			e.preventDefault();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
 			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				"div",
-				{ className: "screen slide" },
+				'div',
+				{ className: 'screen slide' },
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"h1",
+					'h1',
 					null,
-					"Contact Me"
+					'Contact Me'
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("hr", { className: "style-seven" }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'style-seven' }),
+				this.state.conditionMessage,
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					{ className: "row" },
+					'div',
+					{ className: 'row' },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"div",
-						{ className: "col-md-4 text-center", style: { "overflow": "auto" } },
-						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "img-responsive", style: { "height": "275px" },
-							src: "https://images.unsplash.com/photo-1458240598330-ccda17524e5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05e58502ded37d19bbf912722b26d21b&auto=format&fit=crop&w=934&q=80" }),
+						'div',
+						{ className: 'col-md-4 text-center', style: { "overflow": "auto" } },
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							"div",
-							{ className: "row", style: { "marginTop": "5%" } },
+							'div',
+							null,
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'images/corgs.jpg',
+								className: 'img-thumbnail' })
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'row', style: { "marginTop": "5%" } },
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "col-md-3" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-facebook-square" })
+								'div',
+								{ className: 'col-md-3' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fab fa-facebook-square' })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "col-md-3" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-instagram" })
+								'div',
+								{ className: 'col-md-3' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fab fa-instagram' })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "col-md-3" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-tumblr" })
+								'div',
+								{ className: 'col-md-3' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fab fa-tumblr' })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "col-md-3" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-twitter-square" })
+								'div',
+								{ className: 'col-md-3' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fab fa-twitter-square' })
 							)
 						)
 					),
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						"div",
-						{ className: "contact text-center col-md-8" },
+						'div',
+						{ className: 'contact text-center col-md-8' },
 						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-							"form",
+							'form',
 							null,
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "form-group" },
+								'div',
+								{ className: 'form-group' },
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"label",
-									{ htmlFor: "email" },
-									"Email: "
+									'label',
+									{ htmlFor: 'email' },
+									'Email: '
 								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "form-control", type: "text", name: "email",
-									autoComplete: "email",
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'form-control', type: 'text', name: 'email',
+									autoComplete: 'email',
 									value: this.state.email,
 									onChange: function onChange(event) {
-										return _this2.setState({ email: event.target.value });
+										return _this3.setState({ email: event.target.value });
 									} })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "form-group" },
+								'div',
+								{ className: 'form-group' },
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"label",
-									{ htmlFor: "subject" },
-									"Subject: "
+									'label',
+									{ htmlFor: 'subject' },
+									'Subject: '
 								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "form-control", type: "text", name: "subject",
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'form-control', type: 'text', name: 'subject',
 									value: this.state.subject, onChange: function onChange(event) {
-										return _this2.setState({ subject: event.target.value });
+										return _this3.setState({ subject: event.target.value });
 									} })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "form-group" },
+								'div',
+								{ className: 'form-group' },
 								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-									"label",
-									{ htmlFor: "body" },
-									"Message: "
+									'label',
+									{ htmlFor: 'body' },
+									'Message: '
 								),
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", { className: "form-control", name: "body", value: this.state.body, onChange: function onChange(event) {
-										return _this2.setState({ body: event.target.value });
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { className: 'form-control', name: 'body', value: this.state.body, onChange: function onChange(event) {
+										return _this3.setState({ body: event.target.value });
 									} })
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								"div",
-								{ className: "form-group" },
-								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "btn btn-primary btn-block form-control", type: "submit", value: "Submit" })
+								'div',
+								{ className: 'form-group' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'btn btn-primary btn-block form-control', onClick: function onClick(e) {
+										_this3.handleQuestion(e);
+									}, type: 'submit', value: 'Submit' })
 							)
 						)
 					)
@@ -61747,32 +61785,13 @@ function HomeScreen() {
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					"p",
 					null,
-					"Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy. She is American. She has a degree in medicine. She is obsessed with reading. Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes."
+					"Hey, my name\u2019s Brian and here\u2019s my stuff. It all really started in 8th grade with some doodling and someone said, \u201CHey! That looks like a face.\u201D I then started drawing in the rest, trying to make some kind of goblinish thing. I began experimenting with this mosaic/stained glass esque style with some basic animals and such. Over the years I\u2019ve done more and more trying out different subjects, but still focusing on a few specific styles I like to do. It\u2019s mainly because I can\u2019t shade for shit, but my friends I had and new ones I made really liked it and thought it was cool. I like making new pictures for myself, but I really love making them for my friends so they can have some art and pretty things to put on their walls."
 				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					"p",
 					null,
-					"She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together."
-				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"p",
-					null,
-					"Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy. She is American. She has a degree in medicine. She is obsessed with reading. Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes."
-				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"p",
-					null,
-					"She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together."
-				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"p",
-					null,
-					"Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy. She is American. She has a degree in medicine. She is obsessed with reading. Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes."
-				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"p",
-					null,
-					"She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together."
+					"Oh, also there\u2019s the other style of art I like to do with all the lines and random figures. That was pretty much inspired by a 7th grade art project I had to do. The teacher had us draw a lunch on lines depending on random descriptions she made. After we had to fill it in however we wanted. So every now and then I like to take a break from my main style and do this type of drawing."
 				)
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -61781,25 +61800,19 @@ function HomeScreen() {
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					"div",
 					null,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://images.unsplash.com/photo-1513834162622-bcd164ad6a88?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ce96e06e157ef835873719b681c40ae&auto=format&fit=crop&w=1650&q=80",
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "images/grad-pic.jpg",
 						className: "img-thumbnail" })
 				),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					"div",
 					null,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://images.unsplash.com/photo-1509406133657-9169c07958be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28fd729b90557426a8cbaca4afa55bab&auto=format&fit=crop&w=668&q=80",
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "images/halloween-costume.jpeg",
 						className: "img-thumbnail" })
 				),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 					"div",
 					null,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75c105dd84f3d5ebb1d72c5ce1c1b841&auto=format&fit=crop&w=1950&q=80",
-						className: "img-thumbnail" })
-				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					"div",
-					null,
-					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://images.unsplash.com/reserve/DzigRPTrRGm42zNJpbLf_223%20edit%20(1%20of%201).jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=059d9bd6266358003dbc7ff3dbb7b83c&auto=format&fit=crop&w=1650&q=80",
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "images/mirror-selfie.jpg",
 						className: "img-thumbnail" })
 				)
 			)
@@ -61838,9 +61851,9 @@ var quotes = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 	{ className: 'fade' },
 	'"You can be the ripest, juiciest peach in the world, and there\'s still going to be somebody who hates peaches." Dita Von Teese'
 ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-	'h4',
+	'p',
 	{ className: 'fade' },
-	'"I love making new food" Brian Nguyen'
+	'\u201CBe soft. Do not let the world make you hard. Do not let pain make you hate. Do not let bitterness steal your sweetness. Take pride that even though the rest of the world may disagree, you still believe it to be a beautiful place.\u201D Iain Thomas'
 )];
 
 var Title = function (_Component) {

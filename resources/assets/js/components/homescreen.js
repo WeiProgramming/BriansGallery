@@ -7,56 +7,36 @@ function HomeScreen(){
 			<hr className="style-seven"/>
 			<div className = "row">
 				<div className = "col-md-8">
-					<p>Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy.
-
-She is American. She has a degree in medicine. She is obsessed with reading.
-
-Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes.
-					</p>
-
-					<p>She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother
-
-Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together.
-					</p>
-					<p>Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy.
-
-She is American. She has a degree in medicine. She is obsessed with reading.
-
-Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes.
-					</p>
-
-					<p>She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother
-
-Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together.
-					</p>
-					<p>Chelsea is a 24-year-old health centre receptionist who enjoys football, charity work and glamping. She is Vibrant and reliable, but can also be very scatter-braned and a bit grumpy.
-
-She is American. She has a degree in medicine. She is obsessed with reading.
-
-Physically, Chelsea is in good shape. She is very short with olive skin, auburn hair and blue eyes.
-					</p>
-
-					<p>She grew up in a middle class neighbourhood. After her father died when she was young, she was raised by her mother
-
-Chelsea's best friend is a health centre receptionist called Gordon Mason. They are inseparable. She also hangs around with Bryn Martin and Ezra Nguyen. They enjoy spreading fake news on Facebook together.
+					<p>
+						Hey, my name’s Brian and here’s my stuff. It all really started in 
+						8th grade with some doodling and someone said, “Hey! That looks like a face.” 
+						I then started drawing in the rest, trying to make some kind of goblinish thing. 
+						I began experimenting with this mosaic/stained glass esque style with some basic 
+						animals and such. Over the years I’ve done more and more trying out different subjects,
+						 but still focusing on a few specific styles I like to do. It’s mainly because I can’t shade
+						  for shit, but my friends I had and new ones I made really liked it and thought it was cool. 
+						  	I like making new pictures for myself, but I really love making them for my friends so they 
+						  can have some art and pretty things to put on their walls. 
+					</p><br/>
+					<p>
+						Oh, also there’s the other style of art I like to do with all the lines and random figures. 
+						That was pretty much inspired by a 7th grade art project I had to do. The teacher had us draw a lunch on 
+						lines depending on random descriptions she made. After we had to fill it in however we wanted. So every 
+						now and then I like to take a break from my main style and do this type of drawing.
 					</p>
 				</div>
 
 				<div className ="col-md-4">
 					<div> 
-						<img src ="https://images.unsplash.com/photo-1513834162622-bcd164ad6a88?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ce96e06e157ef835873719b681c40ae&auto=format&fit=crop&w=1650&q=80" 
+						<img src ="images/grad-pic.jpg" 
 						className = "img-thumbnail"/>
 					</div>
 					<div> 
-						<img src ="https://images.unsplash.com/photo-1509406133657-9169c07958be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28fd729b90557426a8cbaca4afa55bab&auto=format&fit=crop&w=668&q=80" 
+						<img src ="images/halloween-costume.jpeg"
 						className = "img-thumbnail"/>
 					</div>
 					<div> 
-						<img src ="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75c105dd84f3d5ebb1d72c5ce1c1b841&auto=format&fit=crop&w=1950&q=80" 
-						className = "img-thumbnail"/>
-					</div>
-					<div> 
-						<img src ="https://images.unsplash.com/reserve/DzigRPTrRGm42zNJpbLf_223%20edit%20(1%20of%201).jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=059d9bd6266358003dbc7ff3dbb7b83c&auto=format&fit=crop&w=1650&q=80" 
+						<img src ="images/mirror-selfie.jpg"
 						className = "img-thumbnail"/>
 					</div>
 				</div>

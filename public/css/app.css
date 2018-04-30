@@ -10540,7 +10540,7 @@ button {
   text-shadow: 2px 4px 8px #0a8eff;
 }
 
-.title h4 {
+.title h4:nth-child(2) {
   font-family: Diamond-Dust;
   font-weight: bold;
 }

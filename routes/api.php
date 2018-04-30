@@ -36,3 +36,5 @@ Route::get('/category/{id}', 'ImagesController@getImages');
 	Route::post('/admin/upload',['as'=> 'storedata', 'uses' => 'ImagesController@storeUpload']);
 
 // }) ;
+	
+	Route::post('/send',['as'=>'sendemail','uses'=>'ImagesController@sendEmail']);
