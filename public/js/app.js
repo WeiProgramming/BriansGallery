@@ -61621,9 +61621,9 @@ var ContactScreen = function (_Component) {
 			var _this2 = this;
 
 			axios.post(questionFormURL, {
-				email: "test@gmail.com",
-				subject: "hey there",
-				body: "money"
+				email: this.state.email,
+				subject: this.state.subject,
+				body: this.state.body
 			}).then(function (response) {
 				_this2.setState({ conditionMessage: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 						'p',

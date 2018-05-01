@@ -22,9 +22,9 @@ export default class ContactScreen extends Component{
 
 	handleQuestion(e){
 		axios.post(questionFormURL,{
-			email:"test@gmail.com",
-			subject:"hey there",
-			body:"money"
+			email:this.state.email,
+			subject:this.state.subject,
+			body:this.state.body
 		}).then((response)=> {
 			this.setState({conditionMessage:<p className ="alert alert-success">{response.data.message}</p>});
 		}).catch((error) => {

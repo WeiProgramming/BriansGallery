@@ -24,9 +24,7 @@ class EmailValidator extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'required',
-            'body' => 'required|max:500',
-            'subject' => 'required|max:255'
+
         ];
     }
 }
