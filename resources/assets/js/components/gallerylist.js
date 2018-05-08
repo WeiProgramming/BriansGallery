@@ -50,7 +50,7 @@ export default class GalleryList extends Component {
 		};
 
 		const renderPageNumbers = pageNumbers.map((number)=>{
-			return (
+			return
 				<button
 					className = "btn btn-primary"
 					style = {{"fontFamily":"serif"}}
@@ -59,7 +59,6 @@ export default class GalleryList extends Component {
 					onClick={this.handleClick}>
 					{number}
 				</button>
-			);
 		});
 
 
